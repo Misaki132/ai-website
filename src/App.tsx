@@ -133,8 +133,7 @@ const App: React.FC = () => {
         </Sider>
         <Content className="p-4">
           {/* {renderContent()} */}
-          <h1 className='text-[50px]'>四个大字</h1>
-          <h1 className='text-[50px]'>不，想，上，班</h1>
+          <h1 className='text-[50px]'>不想上班</h1>
         </Content>
       </Layout>
     </Layout>
