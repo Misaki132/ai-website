@@ -18,10 +18,11 @@ const App: React.FC = () => {
       try {
         const toolsData = await import('./data/tools.json');
         const data = selectedCategory 
-          ? toolsData.default.filter(tool => tool.category === selectedCategory)
-          : toolsData.default;
-        setTools(data);
-        setFilteredTools(data);
+          ? toolsData.filter((tool: any) => tool.category === selectedCategory)
+          : toolsData;
+        console.log(data)
+        setTools((data as any).default);
+        setFilteredTools((data as any).default);
       } catch (error) {
         console.error('Error loading tools:', error);
       }
@@ -131,7 +132,9 @@ const App: React.FC = () => {
           />
         </Sider>
         <Content className="p-4">
-          {renderContent()}
+          {/* {renderContent()} */}
+          <h1 className='text-[50px]'>四个大字</h1>
+          <h1 className='text-[50px]'>不，想，上，班</h1>
         </Content>
       </Layout>
     </Layout>
